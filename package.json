@@ -1,0 +1,13 @@
+{
+  "name": "public-key-calendar",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Essential public key cryptography, cybersecurity, and theory submission deadlines.",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "node scripts/serve.mjs",
+    "test": "node --test"
+  }
+}
