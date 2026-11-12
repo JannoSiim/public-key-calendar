@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f9f9f6">
+  <meta name="description" content="Essential cryptography, cybersecurity, and TCS paper submission deadlines, locations, and official websites.">
+  <title>Public Key Calendar</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.mjs"></script>
+</head>
+<body data-category="<!-- CATEGORY_ID -->">
+  <a class="skip-link" href="#conferences">Skip to conferences</a>
+  <div class="page">
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <h1 id="page-title">Public Key Calendar</h1>
+        <p class="intro-description"><!-- SUBTITLE --></p>
+      </section>
+      <nav class="category-tabs" aria-label="Calendar categories"><!-- CATEGORY_TABS --></nav>
+      <section id="conferences" class="calendar" aria-label="Upcoming submission deadlines">
+        <table>
+          <caption class="visually-hidden">The next paper submission deadline for each selected conference, ordered by submission date. Approximate deadlines are marked as estimates.</caption>
+          <colgroup><col class="name-column"><col class="date-column"><col class="location-column"><col class="link-column"></colgroup>
+          <thead><tr><th scope="col">Conference</th><th scope="col">Submission deadline</th><th scope="col">Location</th><th scope="col"><span class="visually-hidden">Conference website</span></th></tr></thead>
+          <tbody id="conference-list">
+            <!-- CONFERENCE_ROWS -->
+          </tbody>
+        </table>
+      </section>
+    </main>
+    <footer class="footer"><a href="https://sites.google.com/view/jannosiim" target="_blank" rel="noopener noreferrer">Janno Siim</a><span>Updated <time datetime="<!-- UPDATED_ISO -->"><!-- UPDATED_LABEL --></time></span></footer>
+  </div>
+  <script id="conference-data" type="application/json"><!-- CONFERENCE_DATA --></script>
+</body>
+</html>

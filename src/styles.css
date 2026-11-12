@@ -1,0 +1,108 @@
+:root {
+  color-scheme: light;
+  --paper: #f9f9f6;
+  --ink: #252c28;
+  --muted: #626c63;
+  --green: #355e43;
+  --line: #e2e7df;
+  --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 17px;
+  background: var(--paper);
+  color: var(--ink);
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+.page { max-width: 1240px; padding: 0 40px 48px; margin: 0 auto; }
+a { color: inherit; }
+a:focus-visible { outline: 2px solid var(--green); outline-offset: 5px; border-radius: 3px; }
+.intro { padding: 57px 0 36px; }
+h1 { margin: 0; font: 700 clamp(36px, 4.8vw, 57px)/1.1 Georgia, "Times New Roman", serif; letter-spacing: -2px; }
+.intro-description { margin: 17px 0 0; font-size: 18px; color: var(--muted); line-height: 1.5; }
+.category-tabs { display: inline-flex; gap: 4px; padding: 5px; margin-bottom: 28px; background: #ebeee7; border-radius: 10px; }
+.category-tab { padding: 10px 20px; border-radius: 7px; text-decoration: none; font-size: 16px; line-height: 1.4; color: var(--muted); transition: background-color .15s ease, color .15s ease; }
+.category-tab:hover { color: var(--ink); background: #e2e7dd; }
+.category-tab[aria-current="page"] { color: var(--green); background: #fff; box-shadow: 0 1px 3px #253a2512; font-weight: 600; }
+.calendar { background: transparent; }
+.footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px 24px; padding-top: 26px; color: var(--muted); font-size: 14px; line-height: 1.5; }
+.footer a { text-decoration: none; }
+.footer a:hover { text-decoration: underline; text-underline-offset: 3px; }
+table { width: 100%; border-collapse: separate; border-spacing: 0; text-align: left; table-layout: fixed; }
+.name-column { width: 32%; }
+.date-column { width: 27%; }
+.location-column { width: 26%; }
+.link-column { width: 15%; }
+thead th { padding: 20px 20px; font-size: 13px; line-height: 1.5; font-weight: 500; color: var(--muted); border-bottom: 1px solid var(--line); }
+tbody th, tbody td { height: 96px; border-bottom: 1px solid var(--line); padding: 20px; vertical-align: middle; }
+tbody th { position: relative; font-weight: 600; }
+tbody tr { transition: background-color .15s ease; }
+tbody tr:hover { background: #f6f8f3; }
+tbody tr.highlighted { background: #f1f5ee; }
+tbody tr.highlighted:hover { background: #eaf1e5; }
+tbody tr.highlighted > th::before { content: ""; position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 2px; height: 22px; border-radius: 2px; background: #78946c; }
+tbody tr.highlighted .conference-name { font-weight: 700; color: #30503a; }
+.conference-name { font-size: 18px; font-weight: 600; line-height: 1.5; letter-spacing: -.15px; }
+.edition-year { margin-left: 9px; color: #6c766e; font-size: 18px; font-weight: 400; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.dates { font-size: 17px; font-weight: 500; line-height: 1.5; font-variant-numeric: tabular-nums; }
+.date-range { position: relative; display: inline-block; white-space: nowrap; }
+.deadline-indicator { position: absolute; left: -25px; top: -3px; display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 32px; padding: 0; border: 0; background: transparent; cursor: pointer; color: #a66a10; }
+.deadline-indicator.urgent { color: #bc4239; }
+.deadline-dot { width: 8px; height: 8px; border: 2px solid currentColor; border-radius: 50%; background: currentColor; }
+.deadline-indicator.estimated .deadline-dot { background: transparent; }
+.deadline-tooltip { display: none; position: absolute; left: -12px; top: calc(100% + 5px); z-index: 2; width: max-content; max-width: 250px; padding: 8px 12px; border-radius: 6px; background: var(--ink); color: #fff; font-size: 13px; line-height: 1.5; white-space: normal; box-shadow: 0 3px 12px #253a2518; }
+.date-range:not(.tooltip-dismissed):hover .deadline-tooltip,
+.date-range:not(.tooltip-dismissed):focus-within .deadline-tooltip,
+.date-range:not(.tooltip-dismissed) .deadline-indicator[aria-expanded="true"] + .deadline-tooltip { display: block; }
+.date-note { display: block; margin-top: 5px; color: #78613b; font-size: 13px; font-weight: 400; line-height: 1.5; }
+.deadline-detail { color: var(--muted); }
+.deadline-detail:empty { display: none; }
+.location { font-size: 16px; line-height: 1.5; color: var(--muted); }
+.unannounced { color: var(--muted); font-size: 15px; }
+tbody td.website { text-align: right; padding-left: 0; }
+.website a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-size: 14px; color: var(--green); text-decoration: none; white-space: nowrap; }
+.website a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.external-arrow { font-size: 19px; line-height: 1; transition: transform .15s ease; }
+.website a:hover .external-arrow { transform: translate(2px, -2px); }
+.visually-hidden, .skip-link:not(:focus) { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.skip-link:focus { position: fixed; top: 12px; left: 12px; padding: 12px; background: var(--paper); z-index: 10; }
+@media (min-width: 1600px) { .intro { padding-top: 72px; padding-bottom: 40px; } }
+@media (max-width: 1000px) {
+  .page { padding-right: 28px; padding-left: 28px; }
+  thead th, tbody th, tbody td { padding-right: 14px; padding-left: 14px; }
+  .name-column { width: 30%; }
+  .date-column { width: 29%; }
+}
+@media (max-width: 820px) {
+  .page { padding: 0 24px 32px; max-width: 680px; }
+  .intro { padding: 41px 0 28px; }
+  h1 { font-size: clamp(31px, 6vw, 43px); letter-spacing: -1.5px; }
+  .intro-description { font-size: 17px; }
+  .category-tabs { display: flex; margin-bottom: 24px; }
+  .category-tab { flex: 1; padding: 10px 8px; text-align: center; }
+  .calendar { border: 0; background: transparent; }
+  table, tbody { display: block; }
+  colgroup { display: none; }
+  thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+  tbody tr { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0 16px; padding: 22px 18px; border-bottom: 1px solid var(--line); }
+  tbody tr.highlighted > th::before { left: -18px; }
+  tbody th, tbody td { border: 0; padding: 0; height: auto; }
+  tbody th { grid-column: 1 / -1; grid-row: 1; }
+  .conference-name, .edition-year { font-size: 18px; }
+  .dates { grid-column: 1 / -1; grid-row: 2; padding-top: 10px; font-size: 17px; }
+  .deadline-indicator { position: relative; left: auto; top: auto; width: 24px; height: 32px; margin-left: -5px; vertical-align: middle; }
+  .deadline-tooltip { left: 0; }
+  .location { grid-column: 1; grid-row: 3; padding-top: 12px; font-size: 16px; align-self: center; }
+  .website { grid-column: 2; grid-row: 3; align-self: end; }
+  .website a { font-size: 14px; padding-top: 8px; }
+  .footer { padding-top: 12px; }
+}
+@media (max-width: 360px) {
+  .page { padding: 0 16px 28px; }
+  h1 { font-size: 29px; }
+  .category-tab { padding-right: 5px; padding-left: 5px; font-size: 15px; }
+  tbody tr { padding: 16px; column-gap: 10px; }
+  tbody tr.highlighted > th::before { left: -16px; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; } }
