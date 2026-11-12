@@ -1,0 +1,903 @@
+{
+  "updated": "2026-11-12",
+  "conferences": [
+    {
+      "id": "crypto",
+      "name": "CRYPTO",
+      "intervalYears": 1,
+      "website": "https://crypto.iacr.org/",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-17",
+          "end": "2026-08-20",
+          "city": "Santa Barbara",
+          "country": "USA",
+          "url": "https://crypto.iacr.org/2026/",
+          "status": "confirmed",
+          "source": "https://crypto.iacr.org/2026/",
+          "submission": {
+            "date": "2026-02-12",
+            "status": "confirmed",
+            "source": "https://crypto.iacr.org/2026/",
+            "time": "23:59 US Pacific"
+          }
+        },
+        {
+          "year": 2027,
+          "start": "2027-08-17",
+          "end": "2027-08-20",
+          "city": "Santa Barbara",
+          "country": "USA",
+          "url": "https://crypto.iacr.org/2027/",
+          "status": "estimated",
+          "basedOnYear": 2026,
+          "source": "https://crypto.iacr.org/2026/",
+          "locationSource": "https://crypto.iacr.org/2027/",
+          "submission": {
+            "date": "2027-02-12",
+            "status": "estimated",
+            "source": "https://crypto.iacr.org/2026/",
+            "basedOnYear": 2026
+          }
+        }
+      ],
+      "category": "cryptography",
+      "highlight": true
+    },
+    {
+      "id": "eurocrypt",
+      "name": "EUROCRYPT",
+      "intervalYears": 1,
+      "website": "https://eurocrypt.iacr.org/",
+      "editions": [
+        {
+          "year": 2027,
+          "start": "2027-04-11",
+          "end": "2027-04-15",
+          "city": "Eindhoven",
+          "country": "Netherlands",
+          "url": "https://eurocrypt.iacr.org/2027/",
+          "status": "confirmed",
+          "source": "https://eurocrypt.iacr.org/2027/",
+          "submission": {
+            "date": "2026-09-17",
+            "status": "confirmed",
+            "source": "https://eurocrypt.iacr.org/2027/",
+            "time": "23:59 AoE"
+          }
+        }
+      ],
+      "category": "cryptography",
+      "highlight": true
+    },
+    {
+      "id": "asiacrypt",
+      "name": "ASIACRYPT",
+      "intervalYears": 1,
+      "website": "https://asiacrypt.iacr.org/",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-12-07",
+          "end": "2026-12-11",
+          "city": "Hong Kong",
+          "country": "China",
+          "url": "https://asiacrypt.iacr.org/2026/",
+          "status": "confirmed",
+          "source": "https://asiacrypt.iacr.org/2026/",
+          "submission": {
+            "date": "2026-05-21",
+            "status": "confirmed",
+            "source": "https://asiacrypt.iacr.org/2026/",
+            "time": "23:59 AoE"
+          }
+        },
+        {
+          "year": 2027,
+          "start": "2027-12-13",
+          "end": "2027-12-17",
+          "city": "Nagoya",
+          "country": "Japan",
+          "url": "https://asiacrypt.iacr.org/2026/",
+          "status": "confirmed",
+          "source": "https://iacr.org/events/",
+          "submission": {
+            "date": "2027-05-21",
+            "status": "estimated",
+            "source": "https://asiacrypt.iacr.org/2026/",
+            "basedOnYear": 2026
+          },
+          "linkIsPrevious": true
+        }
+      ],
+      "category": "cryptography",
+      "highlight": true
+    },
+    {
+      "id": "tcc",
+      "name": "TCC",
+      "intervalYears": 1,
+      "website": "https://tcc.iacr.org/",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-11-10",
+          "end": "2026-11-13",
+          "city": "New York",
+          "country": "USA",
+          "url": "https://tcc.iacr.org/2026/",
+          "status": "confirmed",
+          "source": "https://iacr.org/events/",
+          "submission": {
+            "date": "2026-05-19",
+            "status": "confirmed",
+            "source": "https://iacr.org/events/"
+          }
+        }
+      ],
+      "category": "cryptography",
+      "highlight": true
+    },
+    {
+      "id": "pkc",
+      "name": "PKC",
+      "intervalYears": 1,
+      "website": "https://pkc.iacr.org/",
+      "editions": [
+        {
+          "year": 2027,
+          "start": "2027-03-01",
+          "end": "2027-03-04",
+          "city": "Taipei",
+          "country": "Taiwan",
+          "url": "https://pkc.iacr.org/2027/",
+          "status": "confirmed",
+          "source": "https://iacr.org/events/",
+          "submission": {
+            "date": "2026-08-16",
+            "status": "confirmed",
+            "source": "https://iacr.org/events/"
+          }
+        }
+      ],
+      "category": "cryptography",
+      "highlight": false
+    },
+    {
+      "id": "pqcrypto",
+      "name": "PQCrypto",
+      "intervalYears": 1,
+      "website": "https://www.pqcrypto.org/conferences.html",
+      "editions": [
+        {
+          "year": 2027,
+          "start": "2027-05-12",
+          "end": "2027-05-14",
+          "city": "Waterloo",
+          "country": "Canada",
+          "url": "https://pqcrypto2027.ca/",
+          "status": "confirmed",
+          "source": "https://pqcrypto2027.ca/",
+          "submission": {
+            "date": "2026-11-24",
+            "status": "confirmed",
+            "source": "https://pqcrypto2027.ca/callforpapers.php",
+            "abstractDate": "2026-11-17"
+          }
+        }
+      ],
+      "category": "cryptography",
+      "highlight": false
+    },
+    {
+      "id": "fc",
+      "name": "FC",
+      "intervalYears": 1,
+      "website": "https://ifca.ai/",
+      "editions": [
+        {
+          "year": 2027,
+          "start": "2027-02-08",
+          "end": "2027-02-12",
+          "city": null,
+          "country": "Barbados",
+          "url": "https://fc27.ifca.ai/",
+          "status": "confirmed",
+          "source": "https://fc27.ifca.ai/",
+          "submission": {
+            "date": "2026-09-24",
+            "status": "confirmed",
+            "source": "https://fc27.ifca.ai/cfp.html",
+            "time": "23:59 AoE"
+          }
+        }
+      ],
+      "category": "cryptography",
+      "highlight": false
+    },
+    {
+      "id": "latincrypt",
+      "name": "LATINCRYPT",
+      "intervalYears": 2,
+      "website": "https://old-ciencias.medellin.unal.edu.co/eventos/latincrypt/",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-10-01",
+          "end": "2025-10-03",
+          "city": "Medellín",
+          "country": "Colombia",
+          "url": "https://old-ciencias.medellin.unal.edu.co/eventos/latincrypt/",
+          "status": "confirmed",
+          "source": "https://old-ciencias.medellin.unal.edu.co/eventos/latincrypt/",
+          "submission": {
+            "date": "2025-05-16",
+            "status": "confirmed",
+            "source": "https://old-ciencias.medellin.unal.edu.co/eventos/latincrypt/",
+            "time": "23:59 AoE"
+          }
+        }
+      ],
+      "category": "cryptography",
+      "highlight": false
+    },
+    {
+      "id": "scn",
+      "name": "SCN",
+      "intervalYears": 2,
+      "website": "https://scn.unisa.it/scn26/",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-14",
+          "end": "2026-09-16",
+          "city": "Amalfi",
+          "country": "Italy",
+          "url": "https://scn.unisa.it/scn26/",
+          "status": "confirmed",
+          "source": "https://scn.unisa.it/scn26/",
+          "submission": {
+            "date": "2026-03-14",
+            "status": "confirmed",
+            "source": "https://scn.unisa.it/scn26/"
+          }
+        }
+      ],
+      "category": "cryptography",
+      "highlight": false
+    },
+    {
+      "id": "africacrypt",
+      "name": "AFRICACRYPT",
+      "intervalYears": 1,
+      "website": "https://africacrypt2027.ci/",
+      "editions": [
+        {
+          "year": 2027,
+          "start": "2027-07-07",
+          "end": "2027-07-09",
+          "city": "Abidjan",
+          "country": "Côte d’Ivoire",
+          "url": "https://africacrypt2027.ci/",
+          "status": "confirmed",
+          "source": "https://africacrypt2027.ci/",
+          "submission": {
+            "date": "2027-01-15",
+            "status": "confirmed",
+            "source": "https://africacrypt2027.ci/call-for-papers",
+            "time": "23:59 AoE"
+          }
+        }
+      ],
+      "category": "cryptography",
+      "highlight": false
+    },
+    {
+      "id": "cic",
+      "name": "IACR CiC",
+      "category": "cryptography",
+      "intervalYears": 1,
+      "website": "https://cic.iacr.org/",
+      "editions": [
+        {
+          "year": 2026,
+          "start": null,
+          "end": null,
+          "city": null,
+          "country": null,
+          "url": "https://cic.iacr.org/",
+          "status": "confirmed",
+          "source": "https://cic.iacr.org/",
+          "submissions": [
+            {
+              "date": "2026-02-02",
+              "status": "confirmed",
+              "source": "https://cic.iacr.org/",
+              "label": "Issue 1",
+              "time": "23:59 AoE"
+            },
+            {
+              "date": "2026-05-04",
+              "status": "confirmed",
+              "source": "https://cic.iacr.org/",
+              "label": "Issue 2",
+              "time": "23:59 AoE"
+            },
+            {
+              "date": "2026-07-27",
+              "status": "confirmed",
+              "source": "https://cic.iacr.org/",
+              "label": "Issue 3",
+              "time": "23:59 AoE"
+            },
+            {
+              "date": "2026-10-26",
+              "status": "confirmed",
+              "source": "https://cic.iacr.org/",
+              "label": "Issue 4",
+              "time": "23:59 AoE"
+            }
+          ]
+        },
+        {
+          "year": 2027,
+          "start": null,
+          "end": null,
+          "city": null,
+          "country": null,
+          "url": "https://cic.iacr.org/",
+          "status": "confirmed",
+          "source": "https://cic.iacr.org/",
+          "submissions": [
+            {
+              "date": "2027-02-02",
+              "status": "estimated",
+              "source": "https://cic.iacr.org/",
+              "label": "Issue 1",
+              "basedOnYear": 2026
+            },
+            {
+              "date": "2027-05-04",
+              "status": "estimated",
+              "source": "https://cic.iacr.org/",
+              "label": "Issue 2",
+              "basedOnYear": 2026
+            },
+            {
+              "date": "2027-07-27",
+              "status": "estimated",
+              "source": "https://cic.iacr.org/",
+              "label": "Issue 3",
+              "basedOnYear": 2026
+            },
+            {
+              "date": "2027-10-26",
+              "status": "estimated",
+              "source": "https://cic.iacr.org/",
+              "label": "Issue 4",
+              "basedOnYear": 2026
+            }
+          ]
+        }
+      ],
+      "kind": "journal"
+    },
+    {
+      "id": "sp",
+      "name": "IEEE S&P",
+      "category": "cybersec",
+      "intervalYears": 1,
+      "website": "https://sp2027.ieee-security.org/",
+      "editions": [
+        {
+          "year": 2027,
+          "start": "2027-05-17",
+          "end": "2027-05-19",
+          "city": "Montreal",
+          "country": "Canada",
+          "url": "https://sp2027.ieee-security.org/",
+          "status": "confirmed",
+          "source": "https://sp2027.ieee-security.org/",
+          "submission": null,
+          "submissions": [
+            {
+              "date": "2026-06-11",
+              "status": "confirmed",
+              "source": "https://www.ieee-security.org/TC/SP2027/cfpapers.html",
+              "abstractDate": "2026-06-04",
+              "time": "23:59 AoE"
+            },
+            {
+              "date": "2026-11-17",
+              "status": "confirmed",
+              "source": "https://www.ieee-security.org/TC/SP2027/cfpapers.html",
+              "abstractDate": "2026-11-10",
+              "time": "23:59 AoE"
+            }
+          ]
+        }
+      ],
+      "highlight": true
+    },
+    {
+      "id": "ccs",
+      "name": "ACM CCS",
+      "category": "cybersec",
+      "intervalYears": 1,
+      "website": "https://www.sigsac.org/ccs/CCS2027/",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-11-15",
+          "end": "2026-11-19",
+          "city": "The Hague",
+          "country": "Netherlands",
+          "url": "https://www.sigsac.org/ccs/CCS2026/",
+          "status": "confirmed",
+          "source": "https://www.sigsac.org/ccs/CCS2026/",
+          "submission": null,
+          "submissions": [
+            {
+              "date": "2026-01-14",
+              "status": "confirmed",
+              "source": "https://www.sigsac.org/ccs/CCS2026/call-for/call-for-papers.html",
+              "abstractDate": "2026-01-07"
+            },
+            {
+              "date": "2026-04-29",
+              "status": "confirmed",
+              "source": "https://www.sigsac.org/ccs/CCS2026/call-for/call-for-papers.html",
+              "abstractDate": "2026-04-22"
+            }
+          ]
+        },
+        {
+          "year": 2027,
+          "start": "2027-10-11",
+          "end": "2027-10-15",
+          "city": "Atlanta",
+          "country": "USA",
+          "url": "https://www.sigsac.org/ccs/CCS2027/",
+          "status": "confirmed",
+          "source": "https://www.sigsac.org/ccs/CCS2027/",
+          "submission": null,
+          "submissions": [
+            {
+              "date": "2027-01-14",
+              "status": "estimated",
+              "source": "https://www.sigsac.org/ccs/CCS2026/call-for/call-for-papers.html",
+              "basedOnYear": 2026
+            },
+            {
+              "date": "2027-04-29",
+              "status": "estimated",
+              "source": "https://www.sigsac.org/ccs/CCS2026/call-for/call-for-papers.html",
+              "basedOnYear": 2026
+            }
+          ]
+        }
+      ],
+      "highlight": true
+    },
+    {
+      "id": "usenix",
+      "name": "USENIX Security",
+      "category": "cybersec",
+      "intervalYears": 1,
+      "website": "https://www.usenix.org/conference/usenixsecurity27",
+      "editions": [
+        {
+          "year": 2027,
+          "start": "2027-08-11",
+          "end": "2027-08-13",
+          "city": "Denver",
+          "country": "USA",
+          "url": "https://www.usenix.org/conference/usenixsecurity27",
+          "status": "confirmed",
+          "source": "https://www.usenix.org/conference/usenixsecurity27",
+          "submission": null,
+          "submissions": [
+            {
+              "date": "2026-08-25",
+              "status": "confirmed",
+              "source": "https://www.usenix.org/conference/usenixsecurity27/call-for-papers",
+              "abstractDate": "2026-08-18",
+              "time": "23:59 AoE"
+            },
+            {
+              "date": "2027-01-26",
+              "status": "confirmed",
+              "source": "https://www.usenix.org/conference/usenixsecurity27/call-for-papers",
+              "abstractDate": "2027-01-19",
+              "time": "23:59 AoE"
+            }
+          ]
+        }
+      ],
+      "highlight": true
+    },
+    {
+      "id": "eurosp",
+      "name": "EuroS&P",
+      "category": "cybersec",
+      "intervalYears": 1,
+      "website": "https://eurosp2027.ieee-security.org/",
+      "editions": [
+        {
+          "year": 2027,
+          "start": "2027-07-05",
+          "end": "2027-07-09",
+          "city": "Madrid",
+          "country": "Spain",
+          "url": "https://eurosp2027.ieee-security.org/",
+          "status": "confirmed",
+          "source": "https://eurosp2027.ieee-security.org/",
+          "submission": {
+            "date": "2026-12-02",
+            "status": "confirmed",
+            "source": "https://eurosp2027.ieee-security.org/cfp.html",
+            "abstractDate": "2026-11-25",
+            "time": "23:59 AoE"
+          }
+        }
+      ]
+    },
+    {
+      "id": "pets",
+      "name": "PETS / PoPETs",
+      "category": "cybersec",
+      "intervalYears": 1,
+      "website": "https://petsymposium.org/",
+      "editions": [
+        {
+          "year": 2027,
+          "start": "2027-07-19",
+          "end": "2027-07-24",
+          "city": "Delft",
+          "country": "Netherlands",
+          "url": "https://petsymposium.org/",
+          "status": "confirmed",
+          "source": "https://petsymposium.org/",
+          "submission": null,
+          "submissions": [
+            {
+              "date": "2026-05-31",
+              "status": "confirmed",
+              "source": "https://petsymposium.org/cfp27.php",
+              "label": "Issue 1",
+              "time": "23:59 AoE"
+            },
+            {
+              "date": "2026-08-31",
+              "status": "confirmed",
+              "source": "https://petsymposium.org/cfp27.php",
+              "label": "Issue 2",
+              "time": "23:59 AoE"
+            },
+            {
+              "date": "2026-11-30",
+              "status": "confirmed",
+              "source": "https://petsymposium.org/cfp27.php",
+              "label": "Issue 3",
+              "time": "23:59 AoE"
+            },
+            {
+              "date": "2027-02-28",
+              "status": "confirmed",
+              "source": "https://petsymposium.org/cfp27.php",
+              "label": "Issue 4",
+              "time": "23:59 AoE"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stoc",
+      "name": "STOC",
+      "category": "tcs",
+      "intervalYears": 1,
+      "website": "https://acm-stoc.org/stoc2027/",
+      "editions": [
+        {
+          "year": 2027,
+          "start": "2027-06-06",
+          "end": "2027-06-11",
+          "city": "Atlanta",
+          "country": "USA",
+          "url": "https://acm-stoc.org/stoc2027/",
+          "status": "confirmed",
+          "source": "https://acm-stoc.org/stoc2027/",
+          "submission": {
+            "date": "2026-11-02",
+            "status": "confirmed",
+            "source": "https://acm-stoc.org/stoc2027/",
+            "time": "23:59 AoE"
+          }
+        }
+      ],
+      "highlight": true
+    },
+    {
+      "id": "focs",
+      "name": "FOCS",
+      "category": "tcs",
+      "intervalYears": 1,
+      "website": "https://focs.computer.org/2026/",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-11-08",
+          "end": "2026-11-11",
+          "city": "New York",
+          "country": "USA",
+          "url": "https://focs.computer.org/2026/",
+          "status": "confirmed",
+          "source": "https://focs.computer.org/2026/",
+          "submission": {
+            "date": "2026-04-01",
+            "status": "confirmed",
+            "source": "https://focs.computer.org/2026/",
+            "time": "17:00 EDT"
+          }
+        }
+      ],
+      "highlight": true
+    },
+    {
+      "id": "itcs",
+      "name": "ITCS",
+      "category": "tcs",
+      "intervalYears": 1,
+      "website": "https://itcs-conf.org/",
+      "editions": [
+        {
+          "year": 2027,
+          "start": "2027-01-12",
+          "end": "2027-01-15",
+          "city": "Berkeley",
+          "country": "USA",
+          "url": "https://itcs-conf.org/",
+          "status": "confirmed",
+          "source": "https://itcs-conf.org/",
+          "submission": {
+            "date": "2026-09-04",
+            "status": "confirmed",
+            "source": "https://itcs-conf.org/",
+            "abstractDate": "2026-09-02",
+            "time": "16:59 PDT"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ccc",
+      "name": "CCC",
+      "category": "tcs",
+      "intervalYears": 1,
+      "website": "https://computationalcomplexity.org/",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-03",
+          "end": "2026-08-06",
+          "city": "Lisbon",
+          "country": "Portugal",
+          "url": "https://computationalcomplexity.org/Archive/2026/",
+          "status": "confirmed",
+          "source": "https://computationalcomplexity.org/Archive/2026/",
+          "submission": {
+            "date": "2026-02-06",
+            "status": "confirmed",
+            "source": "https://computationalcomplexity.org/Archive/2026/cfp.html",
+            "time": "23:59 AoE"
+          }
+        },
+        {
+          "year": 2027,
+          "start": "2027-07-19",
+          "end": "2027-07-22",
+          "city": "Seattle",
+          "country": "USA",
+          "url": "https://computationalcomplexity.org/",
+          "status": "confirmed",
+          "source": "https://computationalcomplexity.org/",
+          "submission": {
+            "date": "2027-02-06",
+            "status": "estimated",
+            "source": "https://computationalcomplexity.org/Archive/2026/cfp.html",
+            "basedOnYear": 2026
+          }
+        }
+      ]
+    },
+    {
+      "id": "icalp",
+      "name": "ICALP",
+      "category": "tcs",
+      "intervalYears": 1,
+      "website": "https://icalp.uj.edu.pl/home/",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-07-07",
+          "end": "2026-07-10",
+          "city": "London",
+          "country": "UK",
+          "url": "https://icalppodcspaa2026.cs.rhul.ac.uk/icalp/",
+          "status": "confirmed",
+          "source": "https://icalppodcspaa2026.cs.rhul.ac.uk/icalp/",
+          "submission": {
+            "date": "2026-02-06",
+            "status": "confirmed",
+            "source": "https://icalppodcspaa2026.cs.rhul.ac.uk/icalp/",
+            "abstractDate": "2026-02-03",
+            "time": "23:59 AoE"
+          }
+        },
+        {
+          "year": 2027,
+          "start": "2027-07-05",
+          "end": "2027-07-09",
+          "city": "Kraków",
+          "country": "Poland",
+          "url": "https://icalp.uj.edu.pl/home/",
+          "status": "confirmed",
+          "source": "https://icalp.uj.edu.pl/home/",
+          "submission": null,
+          "submissions": [
+            {
+              "date": "2026-09-15",
+              "status": "confirmed",
+              "source": "https://icalp.uj.edu.pl/track-b/",
+              "label": "Track B, round 1",
+              "time": "23:59 AoE"
+            },
+            {
+              "date": "2027-02-06",
+              "status": "estimated",
+              "source": "https://icalppodcspaa2026.cs.rhul.ac.uk/icalp/",
+              "basedOnYear": 2026,
+              "label": "Track A / Track B round 2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "acns",
+      "name": "ACNS",
+      "category": "cryptography",
+      "intervalYears": 1,
+      "website": "https://acns2027.isg.rhul.ac.uk/",
+      "highlight": false,
+      "editions": [
+        {
+          "year": 2027,
+          "start": "2027-06-28",
+          "end": "2027-07-01",
+          "city": "Egham",
+          "country": "UK",
+          "url": "https://acns2027.isg.rhul.ac.uk/",
+          "status": "confirmed",
+          "source": "https://acns2027.isg.rhul.ac.uk/",
+          "submissions": [
+            {
+              "date": "2026-09-24",
+              "status": "confirmed",
+              "source": "https://acns2027.isg.rhul.ac.uk/",
+              "time": "23:59 AoE"
+            },
+            {
+              "date": "2027-01-21",
+              "status": "confirmed",
+              "source": "https://acns2027.isg.rhul.ac.uk/",
+              "time": "23:59 AoE"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "csf",
+      "name": "CSF",
+      "category": "cybersec",
+      "intervalYears": 1,
+      "website": "https://csf2027.ieee-security.org/",
+      "highlight": false,
+      "editions": [
+        {
+          "year": 2027,
+          "start": "2027-09-13",
+          "end": "2027-09-17",
+          "city": "Tokyo",
+          "country": "Japan",
+          "url": "https://csf2027.ieee-security.org/",
+          "status": "confirmed",
+          "source": "https://csf2027.ieee-security.org/",
+          "submissions": [
+            {
+              "date": "2026-08-03",
+              "status": "confirmed",
+              "source": "https://csf2027.ieee-security.org/",
+              "time": "23:59 AoE"
+            },
+            {
+              "date": "2026-10-15",
+              "status": "confirmed",
+              "source": "https://csf2027.ieee-security.org/",
+              "time": "23:59 AoE"
+            },
+            {
+              "date": "2027-01-28",
+              "status": "confirmed",
+              "source": "https://csf2027.ieee-security.org/",
+              "time": "23:59 AoE"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sac",
+      "name": "SAC",
+      "category": "cryptography",
+      "intervalYears": 1,
+      "website": "https://sacworkshop.org/SAC27/",
+      "highlight": false,
+      "editions": [
+        {
+          "year": 2027,
+          "start": "2027-08-23",
+          "end": "2027-08-27",
+          "city": "Victoria",
+          "country": "Canada",
+          "url": "https://sacworkshop.org/SAC27/",
+          "status": "confirmed",
+          "source": "https://sacworkshop.org/SAC27/",
+          "submissions": [
+            {
+              "date": "2027-02-08",
+              "status": "confirmed",
+              "source": "https://sacworkshop.org/SAC27/"
+            },
+            {
+              "date": "2027-05-17",
+              "status": "confirmed",
+              "source": "https://sacworkshop.org/SAC27/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "itc",
+      "name": "ITC",
+      "category": "cryptography",
+      "intervalYears": 1,
+      "website": "https://itcrypto.github.io/",
+      "highlight": false,
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-15",
+          "end": "2026-08-16",
+          "city": "Santa Barbara",
+          "country": "USA",
+          "url": "https://itcrypto.github.io/2026/index.html",
+          "status": "confirmed",
+          "source": "https://itcrypto.github.io/2026/index.html",
+          "submissions": [
+            {
+              "date": "2026-03-16",
+              "status": "confirmed",
+              "source": "https://itcrypto.github.io/2026/2026cfp.html",
+              "time": "23:59 AoE"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
