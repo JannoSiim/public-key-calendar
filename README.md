@@ -1,5 +1,9 @@
 # Public Key Calendar
 
+Live website: https://jannosiim.github.io/public-key-calendar/
+
+Desktop maintenance instructions and weekly completion checks are documented in [MAINTENANCE.md](MAINTENANCE.md).
+
 A minimal submission-deadline calendar with three category tabs. Cryptography is the default: CRYPTO, EUROCRYPT, ASIACRYPT, TCC, PKC, PQCrypto, Financial Cryptography, LATINCRYPT, SCN, AFRICACRYPT, ACNS, SAC, ITC, and IACR CiC. Cybersec contains IEEE S&P, ACM CCS, USENIX Security, EuroS&P, PETS/PoPETs, and CSF. TCS contains STOC, FOCS, ITCS, CCC, and ICALP.
 
 Each row shows a conference name, full-paper submission deadline, location, and website. The next submission opportunity is selected and sorted by its deadline. Conference dates are not displayed. Editions whose submissions have closed are replaced by the next edition. There are no external fonts, tracking, accounts, API keys, or runtime dependencies.
@@ -65,7 +69,7 @@ Edit `data/conferences.json`. It is the single source of conference data. Update
 - Explicit estimated deadlines use submission.status = "estimated" and submission.basedOnYear = the baseline conference edition year.
 - If no future submission opportunity is saved, project the last confirmed submission deadline using the series cycle and label it Approx. and Estimated · based on YEAR.
 - Preserve the offset between deadline year and edition year. EUROCRYPT 2027 had a September 2026 deadline; the estimate for EUROCRYPT 2028 is September 2027.
-- LATINCRYPT and SCN use two-year cycles. The other eight use one-year cycles.
+- LATINCRYPT and SCN use two-year cycles. The other conference series use one-year cycles.
 - Estimates are planning approximations. Update them when announced. Do not infer cutoff times, venues, or new website addresses.
 - Generated future editions show To be announced for location and link to the last saved organizer site as Last edition. Saved future editions can retain independently confirmed venues.
 - Dates roll over on the following civil day in the visitor's timezone. Exact cutoff times are informational; the organizer's submission system is authoritative.
