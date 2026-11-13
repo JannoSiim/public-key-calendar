@@ -66,3 +66,11 @@ crowdsourced estimates, not future conference-date quotes. Every tooltip links
 its city source and shows the check date. Egham had no comparable Numbeo city
 price; it displays unavailable. Unannounced cities and the online journal have
 no invented price. This feature update is not a full conference-source audit.
+
+## SCN 2028 expected location
+
+At the user's request, SCN 2028 shows Amalfi, Italy (expected), based on its
+[venue history](https://link.springer.com/conference/scn). This is a planning
+assumption, not an organizer announcement. The 2028 conference and submission
+dates remain estimates from 2026. No venue assumption is carried automatically
+to later editions.

@@ -25,6 +25,9 @@ in the same Monday–Sunday week. No-change checks count; incomplete checks do n
    list, category assignments, highlights, and design. Change calendar data only
    when supported by organizer sources. Keep estimates explicitly estimated;
    preserve annual/biennial cycles. Do not invent dates, locations, or times.
+   User-approved exception: SCN 2028 displays Amalfi, Italy with
+   `locationStatus: "expected"`, based on its historical venue. Preserve that
+   qualifier until an official announcement confirms or replaces the location.
    Conference date status belongs to the edition, independently of submission
    status; keep confirmed conference dates confirmed even if its deadline is estimated.
    For new announced cities, add a sourced 0.5 L domestic draught beer estimate

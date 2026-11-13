@@ -262,6 +262,26 @@
             "status": "confirmed",
             "source": "https://scn.unisa.it/scn26/"
           }
+        },
+        {
+          "year": 2028,
+          "start": "2028-09-14",
+          "end": "2028-09-16",
+          "city": "Amalfi",
+          "country": "Italy",
+          "locationStatus": "expected",
+          "locationSource": "https://link.springer.com/conference/scn",
+          "url": "https://scn.unisa.it/scn26/",
+          "linkIsPrevious": true,
+          "status": "estimated",
+          "basedOnYear": 2026,
+          "source": "https://scn.unisa.it/scn26/",
+          "submission": {
+            "date": "2028-03-14",
+            "status": "estimated",
+            "basedOnYear": 2026,
+            "source": "https://scn.unisa.it/scn26/"
+          }
         }
       ],
       "category": "cryptography",

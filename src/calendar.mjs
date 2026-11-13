@@ -165,7 +165,9 @@ function eventDetails(conference) {
 export function renderRows(conferences, today = todayISO(), beerPrices = []) {
   return conferences.map(conference => {
     const estimated = conference.status === 'estimated';
-    const location = conference.kind === 'journal' ? 'Journal · online' : [conference.city, conference.country].filter(Boolean).join(', ') || 'To be announced';
+    const locationName = [conference.city, conference.country].filter(Boolean).join(', ');
+    const location = conference.kind === 'journal' ? 'Journal · online' : locationName
+      ? `${locationName}${conference.locationStatus === 'expected' ? ' (expected)' : ''}` : 'To be announced';
     const date = conference.submission.date;
     const urgency = deadlineUrgency(date, estimated, today);
     const tooltipId = `deadline-tip-${conference.id}`;
