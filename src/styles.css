@@ -51,6 +51,11 @@ tbody tr.highlighted .conference-name { font-weight: 700; color: #30503a; }
 .deadline-indicator.urgent { color: #bc4239; }
 .deadline-dot { width: 8px; height: 8px; border: 2px solid currentColor; border-radius: 50%; background: currentColor; }
 .deadline-indicator.estimated .deadline-dot { background: transparent; }
+.deadline-indicator.urgent .deadline-dot { animation: deadline-blink 2s ease-in-out infinite; }
+@keyframes deadline-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .25; }
+}
 .deadline-tooltip { display: none; position: absolute; left: -12px; top: calc(100% + 5px); z-index: 2; width: max-content; max-width: 250px; padding: 8px 12px; border-radius: 6px; background: var(--ink); color: #fff; font-size: 13px; line-height: 1.5; white-space: normal; box-shadow: 0 3px 12px #253a2518; }
 .date-range:not(.tooltip-dismissed):hover .deadline-tooltip,
 .date-range:not(.tooltip-dismissed):focus-within .deadline-tooltip,
@@ -105,4 +110,4 @@ tbody td.website { text-align: right; padding-left: 0; }
   tbody tr { padding: 16px; column-gap: 10px; }
   tbody tr.highlighted > th::before { left: -16px; }
 }
-@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; } }
