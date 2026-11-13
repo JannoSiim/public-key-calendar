@@ -56,10 +56,16 @@ tbody tr.highlighted .conference-name { font-weight: 700; color: #30503a; }
   0%, 100% { opacity: 1; }
   50% { opacity: .25; }
 }
-.deadline-tooltip { display: none; position: absolute; left: -12px; top: calc(100% + 5px); z-index: 2; width: max-content; max-width: 250px; padding: 8px 12px; border-radius: 6px; background: var(--ink); color: #fff; font-size: 13px; line-height: 1.5; white-space: normal; box-shadow: 0 3px 12px #253a2518; }
-.date-range:not(.tooltip-dismissed):hover .deadline-tooltip,
-.date-range:not(.tooltip-dismissed):focus-within .deadline-tooltip,
-.date-range:not(.tooltip-dismissed) .deadline-indicator[aria-expanded="true"] + .deadline-tooltip { display: block; }
+.detail-hover { position: relative; display: inline-block; }
+.detail-trigger { position: relative; padding: 0; border: 0; background: transparent; color: inherit; font: inherit; text-align: left; cursor: help; }
+.detail-trigger:focus-visible { outline: 2px solid var(--green); outline-offset: 5px; border-radius: 3px; }
+.detail-tooltip { display: none; position: absolute; left: -12px; top: 100%; z-index: 5; width: max-content; max-width: min(280px, calc(100vw - 84px)); padding: 10px 14px; border-radius: 7px; background: var(--ink); color: #fff; font-size: 14px; font-weight: 400; line-height: 1.55; white-space: normal; box-shadow: 0 5px 18px #253a2526; }
+.tooltip-heading { display: block; font-weight: 600; margin-bottom: 4px; }
+.tooltip-source { display: block; margin-top: 7px; font-size: 12px; color: #d4ded4; }
+.tooltip-source a { text-underline-offset: 3px; }
+.detail-hover:not(.tooltip-dismissed):hover .detail-tooltip,
+.detail-hover:not(.tooltip-dismissed):focus-within .detail-tooltip,
+.detail-hover:not(.tooltip-dismissed) .detail-trigger[aria-expanded="true"] + .detail-tooltip { display: block; }
 .date-note { display: block; margin-top: 5px; color: #78613b; font-size: 13px; font-weight: 400; line-height: 1.5; }
 .deadline-detail { color: var(--muted); }
 .deadline-detail:empty { display: none; }
@@ -97,7 +103,7 @@ tbody td.website { text-align: right; padding-left: 0; }
   .conference-name, .edition-year { font-size: 18px; }
   .dates { grid-column: 1 / -1; grid-row: 2; padding-top: 10px; font-size: 17px; }
   .deadline-indicator { position: relative; left: auto; top: auto; width: 24px; height: 32px; margin-left: -5px; vertical-align: middle; }
-  .deadline-tooltip { left: 0; }
+  .detail-tooltip { left: 0; }
   .location { grid-column: 1; grid-row: 3; padding-top: 12px; font-size: 16px; align-self: center; }
   .website { grid-column: 2; grid-row: 3; align-self: end; }
   .website a { font-size: 14px; padding-top: 8px; }

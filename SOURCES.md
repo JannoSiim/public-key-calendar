@@ -52,3 +52,17 @@ The [official 2026 conference page](https://indocrypt2026.cdacb.in/) lists an ex
 | CSF | [2027 organizer](https://csf2027.ieee-security.org/) confirms cycles 3 August and 15 October 2026, then 28 January 2027, AoE. Next is 28 January 2027. Tokyo, Japan, 13–17 September 2027. |
 | SAC | [2027 organizer](https://sacworkshop.org/SAC27/) confirms paper deadlines 8 February and 17 May 2027, Victoria, Canada, 23–27 August 2027. No cutoff timezone was published on the checked page. This is Selected Areas in Cryptography. |
 | ITC | [2026 CFP](https://itcrypto.github.io/2026/2026cfp.html) confirms extended paper deadline 16 March 2026, AoE; conference 15–16 August in Santa Barbara. The [series site](https://itcrypto.github.io/) still lists 2026. Next deadline is estimated as 16 March 2027; future location is unannounced. |
+# Hover details added 13 November 2026
+
+Conference date tooltips use the existing sourced edition start/end dates below.
+Their confirmation status is independent of the submission deadline status.
+Projected future conference dates remain explicitly approximate.
+
+`data/beer-prices.json` records 13 city estimates read on 13 November 2026 from
+the linked Numbeo city pages, with `displayCurrency=EUR&displayUnit=1`.
+The measure is **Domestic Draft Beer (0.5 Liter)** in the Restaurants section,
+not bottled supermarket beer. Values are Numbeo's EUR conversions and are
+crowdsourced estimates, not future conference-date quotes. Every tooltip links
+its city source and shows the check date. Egham had no comparable Numbeo city
+price; it displays unavailable. Unannounced cities and the online journal have
+no invented price. This feature update is not a full conference-source audit.

@@ -8,7 +8,7 @@ let displayedDay;
 function refresh() {
   const today = todayISO();
   if (today === displayedDay) return;
-  list.innerHTML = renderRows(upcomingConferences(data, today, category), today);
+  list.innerHTML = renderRows(upcomingConferences(data, today, category), today, data.beerPrices);
   displayedDay = today;
 }
 
@@ -17,14 +17,16 @@ refresh();
 setInterval(refresh, 60_000);
 document.addEventListener('visibilitychange', () => { if (!document.hidden) refresh(); });
 
-function closeDeadlineDetails() {
-  list.querySelectorAll('.deadline-indicator').forEach(button => button.setAttribute('aria-expanded', 'false'));
+function closeDetails() {
+  list.querySelectorAll('.detail-trigger').forEach(button => button.setAttribute('aria-expanded', 'false'));
 }
 
 document.addEventListener('click', event => {
-  const button = event.target.closest('.deadline-indicator');
+  if (event.target.closest('.detail-tooltip')) return;
+  const button = event.target.closest('.detail-trigger');
   const opening = button?.getAttribute('aria-expanded') !== 'true';
-  closeDeadlineDetails();
+  closeDetails();
+  list.querySelectorAll('.detail-hover').forEach(range => range.classList.add('tooltip-dismissed'));
   if (button) {
     button.setAttribute('aria-expanded', String(opening));
     button.parentElement.classList.toggle('tooltip-dismissed', !opening);
@@ -32,16 +34,16 @@ document.addEventListener('click', event => {
 });
 document.addEventListener('keydown', event => {
   if (event.key === 'Escape') {
-    closeDeadlineDetails();
-    list.querySelectorAll('.date-range').forEach(range => range.classList.add('tooltip-dismissed'));
+    closeDetails();
+    list.querySelectorAll('.detail-hover').forEach(range => range.classList.add('tooltip-dismissed'));
   }
 });
 list.addEventListener('pointerover', event => {
-  const range = event.target.closest('.date-range');
+  const range = event.target.closest('.detail-hover');
   if (range && !range.contains(event.relatedTarget)) range.classList.remove('tooltip-dismissed');
 });
-list.addEventListener('focusin', event => event.target.closest('.date-range')?.classList.remove('tooltip-dismissed'));
+list.addEventListener('focusin', event => event.target.closest('.detail-hover')?.classList.remove('tooltip-dismissed'));
 list.addEventListener('focusout', event => {
-  const range = event.target.closest('.date-range');
-  if (range && !range.contains(event.relatedTarget)) closeDeadlineDetails();
+  const range = event.target.closest('.detail-hover');
+  if (range && !range.contains(event.relatedTarget)) closeDetails();
 });

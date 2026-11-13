@@ -1,0 +1,93 @@
+[
+  {
+    "city": "Waterloo",
+    "country": "Canada",
+    "eur": 4.44,
+    "checked": "2026-11-13",
+    "source": "https://www.numbeo.com/cost-of-living/in/Waterloo?displayCurrency=EUR&displayUnit=1"
+  },
+  {
+    "city": "Abidjan",
+    "country": "Côte d’Ivoire",
+    "eur": 0.91,
+    "checked": "2026-11-13",
+    "source": "https://www.numbeo.com/cost-of-living/in/Abidjan?displayCurrency=EUR&displayUnit=1"
+  },
+  {
+    "city": "Victoria",
+    "country": "Canada",
+    "eur": 5.08,
+    "checked": "2026-11-13",
+    "source": "https://www.numbeo.com/cost-of-living/in/Victoria?displayCurrency=EUR&displayUnit=1"
+  },
+  {
+    "city": "Santa Barbara",
+    "country": "USA",
+    "eur": 7.24,
+    "checked": "2026-11-13",
+    "source": "https://www.numbeo.com/cost-of-living/in/Santa-Barbara?displayCurrency=EUR&displayUnit=1"
+  },
+  {
+    "city": "Nagoya",
+    "country": "Japan",
+    "eur": 2.83,
+    "checked": "2026-11-13",
+    "source": "https://www.numbeo.com/cost-of-living/in/Nagoya?displayCurrency=EUR&displayUnit=1"
+  },
+  {
+    "city": "Montreal",
+    "country": "Canada",
+    "eur": 6.03,
+    "checked": "2026-11-13",
+    "source": "https://www.numbeo.com/cost-of-living/in/Montreal?displayCurrency=EUR&displayUnit=1"
+  },
+  {
+    "city": "Delft",
+    "country": "Netherlands",
+    "eur": 5.75,
+    "checked": "2026-11-13",
+    "source": "https://www.numbeo.com/cost-of-living/in/Delft?displayCurrency=EUR&displayUnit=1"
+  },
+  {
+    "city": "Madrid",
+    "country": "Spain",
+    "eur": 3.5,
+    "checked": "2026-11-13",
+    "source": "https://www.numbeo.com/cost-of-living/in/Madrid?displayCurrency=EUR&displayUnit=1"
+  },
+  {
+    "city": "Atlanta",
+    "country": "USA",
+    "eur": 6.33,
+    "checked": "2026-11-13",
+    "source": "https://www.numbeo.com/cost-of-living/in/Atlanta?displayCurrency=EUR&displayUnit=1"
+  },
+  {
+    "city": "Denver",
+    "country": "USA",
+    "eur": 6.33,
+    "checked": "2026-11-13",
+    "source": "https://www.numbeo.com/cost-of-living/in/Denver?displayCurrency=EUR&displayUnit=1"
+  },
+  {
+    "city": "Tokyo",
+    "country": "Japan",
+    "eur": 3.4,
+    "checked": "2026-11-13",
+    "source": "https://www.numbeo.com/cost-of-living/in/Tokyo?displayCurrency=EUR&displayUnit=1"
+  },
+  {
+    "city": "Seattle",
+    "country": "USA",
+    "eur": 7.24,
+    "checked": "2026-11-13",
+    "source": "https://www.numbeo.com/cost-of-living/in/Seattle?displayCurrency=EUR&displayUnit=1"
+  },
+  {
+    "city": "Kraków",
+    "country": "Poland",
+    "eur": 4.09,
+    "checked": "2026-11-13",
+    "source": "https://www.numbeo.com/cost-of-living/in/Krakow-Cracow?displayCurrency=EUR&displayUnit=1"
+  }
+]

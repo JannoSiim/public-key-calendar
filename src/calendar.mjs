@@ -82,7 +82,7 @@ export function nextEdition(conference, today = todayISO()) {
   const editions = conference.editions.flatMap(edition => (edition.submissions ?? [edition.submission]).map(submission => ({...edition, submission})))
     .sort((a, b) => a.submission.date.localeCompare(b.submission.date));
   const announced = editions.find(edition => edition.submission.date >= today);
-  if (announced) return { ...announced, ...metadata, status: announced.submission.status, basedOnYear: announced.submission.basedOnYear };
+  if (announced) return { ...announced, ...metadata, eventStatus: announced.status, eventBasedOnYear: announced.basedOnYear, status: announced.submission.status, basedOnYear: announced.submission.basedOnYear };
 
   // Use the last confirmed edition, never compound an earlier estimate.
   const confirmed = editions.filter(edition => edition.submission.status === 'confirmed');
@@ -100,6 +100,7 @@ export function nextEdition(conference, today = todayISO()) {
   return {
     ...metadata, year, start, end,
     status: 'estimated', basedOnYear: baselineYear,
+    eventStatus: 'estimated', eventBasedOnYear: baseline.basedOnYear ?? baseline.year,
     city: null, country: null,
     url: baseline.url, linkIsPrevious: true,
     source: baseline.source,
@@ -140,14 +141,42 @@ export function deadlineUrgency(date, estimated = false, today = todayISO()) {
   return { level: days <= 7 ? 'urgent' : 'soon', label: `${estimated ? 'Estimated deadline' : 'Due'} ${when}` };
 }
 
-export function renderRows(conferences, today = todayISO()) {
+export function validateBeerPrices(prices) {
+  const locations = new Set();
+  for (const price of prices) {
+    const key = `${price.city}|${price.country}`;
+    if (!price.city || !price.country || locations.has(key) || !Number.isFinite(price.eur) || price.eur <= 0) throw new Error('Invalid or duplicate city beer price');
+    locations.add(key);
+    parseDate(price.checked);
+    validateURL(price.source);
+  }
+  return prices;
+}
+
+function eventDetails(conference) {
+  if (conference.kind === 'journal') return 'Journal publication · no conference dates';
+  if (!conference.start || !conference.end) return 'Conference dates to be announced';
+  const dates = formatDateRange(conference.start, conference.end);
+  return conference.eventStatus === 'estimated'
+    ? `Conference: approx. ${dates} · based on ${conference.eventBasedOnYear}`
+    : `Conference: ${dates}`;
+}
+
+export function renderRows(conferences, today = todayISO(), beerPrices = []) {
   return conferences.map(conference => {
     const estimated = conference.status === 'estimated';
     const location = conference.kind === 'journal' ? 'Journal · online' : [conference.city, conference.country].filter(Boolean).join(', ') || 'To be announced';
     const date = conference.submission.date;
     const urgency = deadlineUrgency(date, estimated, today);
     const tooltipId = `deadline-tip-${conference.id}`;
-    const indicator = urgency ? `<button type="button" class="deadline-indicator ${urgency.level}${estimated ? ' estimated' : ''}" aria-label="${escapeHTML(urgency.label)}" aria-describedby="${escapeHTML(tooltipId)}" aria-expanded="false"><span class="deadline-dot" aria-hidden="true"></span></button><span class="deadline-tooltip" role="tooltip" id="${escapeHTML(tooltipId)}">${escapeHTML(urgency.label)}</span>` : '';
+    const indicator = urgency ? `<span class="deadline-indicator ${urgency.level}${estimated ? ' estimated' : ''}" aria-hidden="true"><span class="deadline-dot"></span></span>` : '';
+    const deadlineDetails = `${urgency ? `<span class="tooltip-heading">${escapeHTML(urgency.label)}</span>` : ''}${escapeHTML(eventDetails(conference))}`;
+    const beer = beerPrices.find(price => price.city === conference.city && price.country === conference.country);
+    const beerDetails = beer
+      ? `<span class="tooltip-heading">Beer ≈ €${beer.eur.toFixed(2)}</span>Average domestic draught · 0.5 L<br>At a bar or restaurant<span class="tooltip-source"><a href="${escapeHTML(beer.source)}" target="_blank" rel="noopener noreferrer">Numbeo ↗</a> · checked ${formatDateRange(beer.checked, beer.checked)}</span>`
+      : conference.kind === 'journal' ? 'Online journal · no conference location'
+      : !conference.city ? 'Beer price available once the city is announced'
+      : 'City beer-price estimate unavailable';
     const dateLabel = `${estimated ? 'Approx. ' : ''}${formatDateRange(date, date)}`;
     const note = estimated
       ? `<span class="date-note">Estimated · based on ${conference.basedOnYear}</span>`
@@ -155,8 +184,8 @@ export function renderRows(conferences, today = todayISO()) {
     const linkLabel = conference.linkIsPrevious ? 'Last edition' : 'Website';
     return `<tr${conference.highlight ? ' class="highlighted"' : ''} data-conference="${escapeHTML(conference.id)}" data-deadline="${date}" data-status="${conference.status}">
       <th scope="row"><span class="conference-name">${escapeHTML(conference.name)}</span><span class="edition-year">${conference.year}</span></th>
-      <td class="dates"><span class="date-range">${indicator}<time datetime="${date}">${escapeHTML(dateLabel)}</time></span>${note}</td>
-      <td class="location${!conference.country ? ' unannounced' : ''}">${escapeHTML(location)}</td>
+      <td class="dates"><span class="date-range detail-hover"><button type="button" class="detail-trigger" aria-describedby="${escapeHTML(tooltipId)}" aria-expanded="false">${indicator}<time datetime="${date}">${escapeHTML(dateLabel)}</time></button><span class="detail-tooltip deadline-tooltip" role="tooltip" id="${escapeHTML(tooltipId)}">${deadlineDetails}</span></span>${note}</td>
+      <td class="location${!conference.country ? ' unannounced' : ''}"><span class="detail-hover"><button type="button" class="detail-trigger" aria-describedby="beer-tip-${escapeHTML(conference.id)}" aria-expanded="false">${escapeHTML(location)}</button><span class="detail-tooltip beer-tooltip" role="tooltip" id="beer-tip-${escapeHTML(conference.id)}">${beerDetails}</span></span></td>
       <td class="website"><a href="${escapeHTML(conference.url)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHTML(conference.name)} ${conference.year}: ${linkLabel.toLowerCase()} (opens in a new tab)">${linkLabel}<span class="external-arrow" aria-hidden="true">↗</span></a></td>
     </tr>`;
   }).join('\n');

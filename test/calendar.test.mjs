@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { deadlineUrgency, nextEdition, renderRows, upcomingConferences, validateData } from '../src/calendar.mjs';
+import { deadlineUrgency, nextEdition, renderRows, upcomingConferences, validateData, validateBeerPrices } from '../src/calendar.mjs';
 const data = JSON.parse(await readFile(new URL('../data/conferences.json', import.meta.url), 'utf8'));
 const series = id => data.conferences.find(c => c.id === id);
 
@@ -111,7 +111,7 @@ test('full-paper deadline, not abstract deadline, controls selection', () => {
   const html = renderRows([event]);
   assert.match(html, /datetime="2026-11-24"/);
   assert.match(html, /Abstract: 17 Nov 2026/);
-  assert.doesNotMatch(html, /12–14 May/);
+  assert.match(html, /Conference: 12–14 May 2027/);
 });
 test('estimates retain the original baseline and never invent venues', () => {
   const itc = nextEdition(series('itc'), '2026-11-12');
@@ -139,4 +139,29 @@ test('invalid or missing submission dates block publishing', () => {
   assert.throws(() => validateData(invalid), /Invalid calendar date/);
   delete invalid.conferences[0].editions[0].submission;
   assert.throws(() => validateData(invalid), /Missing paper submission/);
+});
+
+test('conference dates keep their own confirmed or estimated status', () => {
+  const confirmedEvent = nextEdition(series('asiacrypt'), '2026-11-13');
+  assert.equal(confirmedEvent.status, 'estimated');
+  assert.match(renderRows([confirmedEvent]), /Conference: 13–17 Dec 2027/);
+  const estimate = nextEdition(series('indocrypt'), '2026-11-13');
+  assert.match(renderRows([estimate]), /Conference: approx\. 13–16 Dec 2027 · based on 2026/);
+  assert.match(renderRows([nextEdition(series('cic'), '2026-11-13')]), /Journal publication · no conference dates/);
+});
+
+test('beer details match city and country and do not follow a previous venue', async () => {
+  const prices = validateBeerPrices(JSON.parse(await readFile(new URL('../data/beer-prices.json', import.meta.url), 'utf8')));
+  const event = nextEdition(series('pqcrypto'), '2026-11-13');
+  const html = renderRows([event], '2026-11-13', prices);
+  assert.match(html, /Beer ≈ €4\.44/);
+  assert.match(html, /Average domestic draught · 0\.5 L/);
+  assert.match(html, /Numbeo ↗/);
+  assert.match(html, /checked 13 Nov 2026/);
+  assert.doesNotMatch(renderRows([{...event, country:'Belgium'}], '2026-11-13', prices), /Beer ≈/);
+  const future = renderRows([nextEdition(series('pqcrypto'), '2026-11-25')], '2026-11-25', prices);
+  assert.doesNotMatch(future, /Beer ≈/);
+  assert.match(future, /once the city is announced/);
+  assert.throws(() => validateBeerPrices([{...prices[0],eur: -1}]), /Invalid/);
+  assert.throws(() => validateBeerPrices([{...prices[0],source:'javascript:alert(1)'}]), /HTTPS/);
 });
