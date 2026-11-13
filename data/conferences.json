@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-12",
+  "updated": "2026-11-13",
   "conferences": [
     {
       "id": "crypto",
@@ -868,6 +868,32 @@
               "source": "https://sacworkshop.org/SAC27/"
             }
           ]
+        }
+      ]
+    },
+    {
+      "id": "indocrypt",
+      "name": "INDOCRYPT",
+      "category": "cryptography",
+      "intervalYears": 1,
+      "website": "https://crsind.in/events/indocrypt-conference/",
+      "highlight": false,
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-12-13",
+          "end": "2026-12-16",
+          "city": "Bengaluru",
+          "country": "India",
+          "url": "https://indocrypt2026.cdacb.in/",
+          "status": "confirmed",
+          "source": "https://crsind.in/events/indocrypt-conference/",
+          "submission": {
+            "date": "2026-08-27",
+            "status": "confirmed",
+            "source": "https://indocrypt2026.cdacb.in/",
+            "time": "23:59 AoE"
+          }
         }
       ]
     },

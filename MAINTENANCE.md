@@ -15,7 +15,7 @@ in the same Monday–Sunday week. No-change checks count; incomplete checks do n
    tree is clean. Never discard user changes, force-push, or overwrite divergent
    history. If blocked, release the run with `fail TOKEN` and report the problem.
 3. Read `data/conferences.json`, `SOURCES.md`, and the date-selection rules. Check
-   official pages for ALL current conference entries (currently 25), including
+   official pages for ALL entries currently in the data file, including
    their calls for papers and submission schedules. Check full-paper deadlines,
    abstract-registration dates, cutoff times/timezones, extensions, multiple
    submission rounds, and announced locations. Follow official links to newly

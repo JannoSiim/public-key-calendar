@@ -4,7 +4,7 @@ Live website: https://jannosiim.github.io/public-key-calendar/
 
 Desktop maintenance instructions and weekly completion checks are documented in [MAINTENANCE.md](MAINTENANCE.md).
 
-A minimal submission-deadline calendar with three category tabs. Cryptography is the default: CRYPTO, EUROCRYPT, ASIACRYPT, TCC, PKC, PQCrypto, Financial Cryptography, LATINCRYPT, SCN, AFRICACRYPT, ACNS, SAC, ITC, and IACR CiC. Cybersec contains IEEE S&P, ACM CCS, USENIX Security, EuroS&P, PETS/PoPETs, and CSF. TCS contains STOC, FOCS, ITCS, CCC, and ICALP.
+A minimal submission-deadline calendar with three category tabs. Cryptography is the default: CRYPTO, EUROCRYPT, ASIACRYPT, TCC, PKC, PQCrypto, Financial Cryptography, LATINCRYPT, SCN, AFRICACRYPT, ACNS, SAC, ITC, INDOCRYPT, and IACR CiC. Cybersec contains IEEE S&P, ACM CCS, USENIX Security, EuroS&P, PETS/PoPETs, and CSF. TCS contains STOC, FOCS, ITCS, CCC, and ICALP.
 
 Each row shows a conference name, full-paper submission deadline, location, and website. The next submission opportunity is selected and sorted by its deadline. Conference dates are not displayed. Editions whose submissions have closed are replaced by the next edition. There are no external fonts, tracking, accounts, API keys, or runtime dependencies.
 

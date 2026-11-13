@@ -36,7 +36,7 @@ test('estimated urgency is explicitly labeled and rendered hollow', () => {
 test('default calendar contains only cryptography and CiC, sorted by future paper deadline', () => {
   validateData(data);
   assert.deepEqual(upcomingConferences(data, '2026-11-12').map(c => c.id), [
-    'pqcrypto', 'africacrypt', 'acns', 'cic', 'sac', 'crypto', 'itc', 'latincrypt', 'tcc', 'asiacrypt', 'pkc', 'eurocrypt', 'fc', 'scn'
+    'pqcrypto', 'africacrypt', 'acns', 'cic', 'sac', 'crypto', 'itc', 'latincrypt', 'tcc', 'asiacrypt', 'pkc', 'indocrypt', 'eurocrypt', 'fc', 'scn'
   ]);
 });
 

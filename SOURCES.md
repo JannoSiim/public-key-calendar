@@ -40,6 +40,10 @@ This is a checked snapshot. Date rollover is not an online monitoring service; a
 | CCC | [2026 CFP](https://computationalcomplexity.org/Archive/2026/cfp.html): 6 February 2026, AoE. Next deadline estimated as 6 February 2027. [Series announcement](https://computationalcomplexity.org/) independently confirms Seattle, 19–22 July 2027. |
 | ICALP | [2027 Track B page](https://icalp.uj.edu.pl/track-b/) lists 15 September 2026 for Track B round 1 (passed), while Track A / Track B round 2 is TBA. Estimate 6 February 2027 from [2026 CFP](https://icalppodcspaa2026.cs.rhul.ac.uk/icalp/), clearly marked. [2027 organizer](https://icalp.uj.edu.pl/home/) confirms Kraków, Poland, 5–9 July. |
 
+## INDOCRYPT (added 13 November 2026)
+
+The [official 2026 conference page](https://indocrypt2026.cdacb.in/) lists an extended full-paper submission deadline of 27 August 2026, end of day AoE (extension announced 20 August). The [CRSI series page](https://crsind.in/events/indocrypt-conference/) confirms Bengaluru, India, 13–16 December 2026 and still lists 2026 as the current edition. The 2026 deadline has passed, so the calendar projects **27 August 2027**, clearly marked approximate and based on 2026. The 2027 location is unannounced; the link points to the last edition. This addition is not a full weekly source review of all venues.
+
 ## Added venues (checked 12 November 2026)
 
 | Venue | Evidence and next deadline |
