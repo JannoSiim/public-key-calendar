@@ -89,5 +89,12 @@
     "eur": 4.09,
     "checked": "2026-11-13",
     "source": "https://www.numbeo.com/cost-of-living/in/Krakow-Cracow?displayCurrency=EUR&displayUnit=1"
+  },
+  {
+    "city": "Budapest",
+    "country": "Hungary",
+    "eur": 3.3,
+    "checked": "2026-11-17",
+    "source": "https://www.numbeo.com/cost-of-living/in/Budapest?displayCurrency=EUR&displayUnit=1"
   }
 ]

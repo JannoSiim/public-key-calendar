@@ -1,19 +1,19 @@
 # Submission deadline sources
 
-Last checked: **12 November 2026**. The visible date is the **full-paper submission deadline**. Abstract registration, notification, camera-ready, and event dates do not determine ordering.
+Last checked: **17 November 2026**. The visible date is the **full-paper submission deadline**. Abstract registration, notification, camera-ready, and event dates do not determine ordering.
 
 | Series | Next edition for submission | Submission date | Baseline / evidence |
 | --- | --- | --- | --- |
-| PQCrypto | 2027 | 24 November 2026, confirmed | [Official CFP](https://pqcrypto2027.ca/callforpapers.php). Required abstract deadline: 17 November 2026. IACR lists the abstract deadline; the full-paper date comes directly from the CFP. |
+| PQCrypto | 2027 | 24 November 2026, AoE, confirmed | [Official CFP](https://pqcrypto2027.ca/callforpapers.php). Required abstract deadline: 17 November 2026. IACR lists the abstract deadline; the full-paper date comes directly from the CFP. |
 | AFRICACRYPT | 2027 | 15 January 2027, 23:59 AoE, confirmed | [Official CFP](https://africacrypt2027.ci/call-for-papers) |
 | CRYPTO | 2027 | Approx. 12 February 2027 | [2026 organizer](https://crypto.iacr.org/2026/): 12 February 2026, 23:59 US Pacific. [2027 announcement](https://crypto.iacr.org/) confirms Santa Barbara but no submission deadline. |
 | LATINCRYPT | 2027 | Approx. 16 May 2027 | [2025 organizer archive](https://old-ciencias.medellin.unal.edu.co/eventos/latincrypt/) and [official 2025 CFP](https://ciencias.medellin.unal.edu.co/eventos/latincrypt/images/CFP_2025_may_10th.pdf): extended paper deadline 16 May 2025, 23:59 AoE. Two-year cycle. Next venue unannounced. |
 | TCC | 2027 | Approx. 19 May 2027 | [IACR calendar](https://iacr.org/events/): 2026 deadline 19 May 2026. Next venue unannounced. |
 | ASIACRYPT | 2027 | Approx. 21 May 2027 | [2026 organizer](https://asiacrypt.iacr.org/2026/): 21 May 2026, 23:59 AoE. Aggregators sometimes show 22 May after timezone conversion; use the organizer's date. Nagoya 2027 independently confirmed by [IACR](https://iacr.org/events/). No 2027 CFP found. |
-| PKC | 2028 | Approx. 16 August 2027 | [IACR calendar](https://iacr.org/events/): 2027 edition deadline 16 August 2026. Deadline precedes edition year. Next venue unannounced. |
+| PKC | 2028 | Approx. 16 August 2027 | [IACR calendar](https://iacr.org/events/): 2027 edition deadline 16 August 2026. Deadline precedes edition year. [Organizing lab announcement](https://jp.linkedin.com/company/crysyslab) confirms Budapest, Hungary, 15–18 May 2028; no 2028 CFP yet. |
 | EUROCRYPT | 2028 | Approx. 17 September 2027 | [2027 organizer](https://eurocrypt.iacr.org/2027/): 17 September 2026, 23:59 AoE. Next venue unannounced. |
 | FC | 2028 | Approx. 24 September 2027 | [2027 CFP](https://fc27.ifca.ai/cfp.html): extended paper deadline 24 September 2026, 23:59 AoE. Next venue unannounced. |
-| SCN | 2028 | Approx. 14 March 2028 | [2026 organizer](https://scn.unisa.it/scn26/): extended submission deadline 14 March 2026. Two-year cycle. Next venue unannounced. |
+| SCN | 2028 | Approx. 14 March 2028 | [2026 organizer](https://scn.unisa.it/scn26/): extended submission deadline 14 March 2026. Two-year cycle. Amalfi, Italy (expected), per the user-approved assumption below. |
 
 Estimates shift the last confirmed full-paper deadline by the series cycle. They are planning approximations. The baseline label refers to the **conference edition year**, which can differ from its deadline year. Cutoff times are not projected for estimates.
 
@@ -74,3 +74,11 @@ At the user's request, SCN 2028 shows Amalfi, Italy (expected), based on its
 assumption, not an organizer announcement. The 2028 conference and submission
 dates remain estimates from 2026. No venue assumption is carried automatically
 to later editions.
+
+## Weekly review — 17 November 2026
+
+All 26 entries and their official submission schedules were rechecked. PQCrypto now explicitly labels both its 17 November abstract deadline and 24 November full-paper deadline as AoE; the dates are unchanged.
+
+The indexed [CrySyS Lab organizer announcement](https://jp.linkedin.com/company/crysyslab) names Budapest, Hungary, and 15–18 May 2028 for PKC 2028. Conference dates and venue are recorded independently of the still-estimated 16 August 2027 paper deadline. The 2028 IACR page currently returns 404, so the calendar retains its labelled last-edition link. Budapest’s [Numbeo city page](https://www.numbeo.com/cost-of-living/in/Budapest?displayCurrency=EUR&displayUnit=1), read today, lists domestic draught beer (0.5 L) at approximately EUR 3.30. Other beer estimates are not yet due for refresh.
+
+STOC moved its video deadline to 17 November 2026; this does not change the full-paper deadline. AFRICACRYPT’s CFP and IACR calendar agree on 15 January 2027; a conflicting future-dated news item on its home page is not used to override that schedule. No other calendar deadline or venue changes were confirmed. Indexed official university CFP and organizer evidence were used for LATINCRYPT and SCN after direct retrieval failed.

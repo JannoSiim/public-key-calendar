@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-13",
+  "updated": "2026-11-17",
   "conferences": [
     {
       "id": "crypto",
@@ -159,6 +159,24 @@
             "status": "confirmed",
             "source": "https://iacr.org/events/"
           }
+        },
+        {
+          "year": 2028,
+          "start": "2028-05-15",
+          "end": "2028-05-18",
+          "city": "Budapest",
+          "country": "Hungary",
+          "url": "https://pkc.iacr.org/2027/",
+          "status": "confirmed",
+          "source": "https://jp.linkedin.com/company/crysyslab",
+          "locationSource": "https://jp.linkedin.com/company/crysyslab",
+          "linkIsPrevious": true,
+          "submission": {
+            "date": "2027-08-16",
+            "status": "estimated",
+            "source": "https://pkc.iacr.org/2027/papersubmission.php",
+            "basedOnYear": 2027
+          }
         }
       ],
       "category": "cryptography",
@@ -183,7 +201,8 @@
             "date": "2026-11-24",
             "status": "confirmed",
             "source": "https://pqcrypto2027.ca/callforpapers.php",
-            "abstractDate": "2026-11-17"
+            "abstractDate": "2026-11-17",
+            "time": "AoE"
           }
         }
       ],
