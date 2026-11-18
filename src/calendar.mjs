@@ -39,12 +39,20 @@ export function validateData(data) {
         throw new Error(`Invalid date range or duplicate edition for ${conference.id}`);
       }
       years.add(edition.year);
-      if (!['confirmed', 'estimated'].includes(edition.status)) throw new Error(`Invalid status for ${conference.id}`);
+      if (!['confirmed', 'estimated', 'unofficial'].includes(edition.status)) throw new Error(`Invalid status for ${conference.id}`);
       if (edition.status === 'estimated' && (!Number.isInteger(edition.basedOnYear) || edition.basedOnYear >= edition.year)) {
         throw new Error(`Estimated dates need a prior baseline year: ${conference.id}`);
       }
       validateURL(edition.url);
       validateURL(edition.source);
+      if (edition.locationStatus &&
+          !['confirmed', 'expected', 'unofficial'].includes(edition.locationStatus)) {
+        throw new Error(`Invalid location status for ${conference.id}`);
+      }
+      if (['expected', 'unofficial'].includes(edition.locationStatus) &&
+          (!edition.locationSource || !(edition.city || edition.country))) {
+        throw new Error(`Provisional locations need a place and source: ${conference.id}`);
+      }
       if (edition.locationSource) validateURL(edition.locationSource);
       const submissions = edition.submissions ?? [edition.submission];
       if (!submissions.length || submissions.some(s => !s)) throw new Error(`Missing paper submission deadline: ${conference.id}`);
@@ -52,7 +60,7 @@ export function validateData(data) {
       for (const submission of submissions) {
       parseDate(submission.date);
       validateURL(submission.source);
-      if (!['confirmed', 'estimated'].includes(submission.status)) throw new Error(`Invalid submission status: ${conference.id}`);
+      if (!['confirmed', 'estimated', 'unofficial'].includes(submission.status)) throw new Error(`Invalid submission status: ${conference.id}`);
       if (submission.status === 'estimated' && (!Number.isInteger(submission.basedOnYear) || submission.basedOnYear >= edition.year)) {
         throw new Error(`Estimated submission deadlines need a baseline edition: ${conference.id}`);
       }
@@ -153,6 +161,10 @@ export function validateBeerPrices(prices) {
   return prices;
 }
 
+function unofficialDetails(label, source) {
+  return `<span class="tooltip-provisional">${escapeHTML(label)} · <a href="${escapeHTML(source)}" target="_blank" rel="noopener noreferrer">Source ↗</a></span>`;
+}
+
 function eventDetails(conference) {
   if (conference.kind === 'journal') return 'Journal publication · no conference dates';
   if (!conference.start || !conference.end) return 'Conference dates to be announced';
@@ -165,20 +177,30 @@ function eventDetails(conference) {
 export function renderRows(conferences, today = todayISO(), beerPrices = []) {
   return conferences.map(conference => {
     const estimated = conference.status === 'estimated';
+    const unofficial = conference.status === 'unofficial';
     const locationName = [conference.city, conference.country].filter(Boolean).join(', ');
     const location = conference.kind === 'journal' ? 'Journal · online' : locationName
       ? `${locationName}${conference.locationStatus === 'expected' ? ' (expected)' : ''}` : 'To be announced';
     const date = conference.submission.date;
-    const urgency = deadlineUrgency(date, estimated, today);
+    const urgency = deadlineUrgency(date, estimated || unofficial, today);
     const tooltipId = `deadline-tip-${conference.id}`;
-    const indicator = urgency ? `<span class="deadline-indicator ${urgency.level}${estimated ? ' estimated' : ''}" aria-hidden="true"><span class="deadline-dot"></span></span>` : '';
-    const deadlineDetails = `${urgency ? `<span class="tooltip-heading">${escapeHTML(urgency.label)}</span>` : ''}${escapeHTML(eventDetails(conference))}`;
+    const indicator = urgency ? `<span class="deadline-indicator ${urgency.level}${estimated ? ' estimated' : unofficial ? ' unofficial' : ''}" aria-hidden="true"><span class="deadline-dot"></span></span>` : '';
+    const unofficialDeadline = unofficial
+      ? unofficialDetails('Unofficial submission deadline', conference.submission.source) : '';
+    const unofficialEvent = conference.eventStatus === 'unofficial'
+      ? unofficialDetails('Unofficial conference dates', conference.source) : '';
+    const urgencyLabel = unofficial ? urgency?.label.replace('Estimated', 'Unofficial') : urgency?.label;
+    const deadlineDetails = `${urgency ? `<span class="tooltip-heading">${escapeHTML(urgencyLabel)}</span>` : ''}${unofficialDeadline}${escapeHTML(eventDetails(conference))}${unofficialEvent}`;
     const beer = beerPrices.find(price => price.city === conference.city && price.country === conference.country);
     const beerDetails = beer
       ? `<span class="tooltip-heading">Beer ≈ €${beer.eur.toFixed(2)}</span>Average domestic draught · 0.5 L<br>At a bar or restaurant<span class="tooltip-source"><a href="${escapeHTML(beer.source)}" target="_blank" rel="noopener noreferrer">Numbeo ↗</a> · checked ${formatDateRange(beer.checked, beer.checked)}</span>`
       : conference.kind === 'journal' ? 'Online journal · no conference location'
       : !conference.city ? 'Beer price available once the city is announced'
       : 'City beer-price estimate unavailable';
+    const unofficialLocation = conference.locationStatus === 'expected'
+      ? unofficialDetails('Unofficial location (based on previous editions)', conference.locationSource)
+      : conference.locationStatus === 'unofficial'
+        ? unofficialDetails('Unofficial location', conference.locationSource) : '';
     const dateLabel = `${estimated ? 'Approx. ' : ''}${formatDateRange(date, date)}`;
     const note = estimated
       ? `<span class="date-note">Estimated · based on ${conference.basedOnYear}</span>`
@@ -187,7 +209,7 @@ export function renderRows(conferences, today = todayISO(), beerPrices = []) {
     return `<tr${conference.highlight ? ' class="highlighted"' : ''} data-conference="${escapeHTML(conference.id)}" data-deadline="${date}" data-status="${conference.status}">
       <th scope="row"><span class="conference-name">${escapeHTML(conference.name)}</span><span class="edition-year">${conference.year}</span></th>
       <td class="dates"><span class="date-range detail-hover"><button type="button" class="detail-trigger" aria-describedby="${escapeHTML(tooltipId)}" aria-expanded="false">${indicator}<time datetime="${date}">${escapeHTML(dateLabel)}</time></button><span class="detail-tooltip deadline-tooltip" role="tooltip" id="${escapeHTML(tooltipId)}">${deadlineDetails}</span></span>${note}</td>
-      <td class="location${!conference.country ? ' unannounced' : ''}"><span class="detail-hover"><button type="button" class="detail-trigger" aria-describedby="beer-tip-${escapeHTML(conference.id)}" aria-expanded="false">${escapeHTML(location)}</button><span class="detail-tooltip beer-tooltip" role="tooltip" id="beer-tip-${escapeHTML(conference.id)}">${beerDetails}</span></span></td>
+      <td class="location${!conference.country ? ' unannounced' : ''}"><span class="detail-hover"><button type="button" class="detail-trigger" aria-describedby="beer-tip-${escapeHTML(conference.id)}" aria-expanded="false">${escapeHTML(location)}</button><span class="detail-tooltip beer-tooltip" role="tooltip" id="beer-tip-${escapeHTML(conference.id)}">${unofficialLocation}${beerDetails}</span></span></td>
       <td class="website"><a href="${escapeHTML(conference.url)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHTML(conference.name)} ${conference.year}: ${linkLabel.toLowerCase()} (opens in a new tab)">${linkLabel}<span class="external-arrow" aria-hidden="true">↗</span></a></td>
     </tr>`;
   }).join('\n');

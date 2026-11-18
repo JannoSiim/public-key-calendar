@@ -1,4 +1,4 @@
-import { renderRows, todayISO, upcomingConferences } from './calendar.mjs';
+import { renderRows, todayISO, upcomingConferences } from './calendar.mjs?v=2';
 
 const data = JSON.parse(document.getElementById('conference-data').textContent);
 const list = document.getElementById('conference-list');

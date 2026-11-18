@@ -167,7 +167,7 @@
           "city": "Budapest",
           "country": "Hungary",
           "url": "https://pkc.iacr.org/2027/",
-          "status": "confirmed",
+          "status": "unofficial",
           "source": "https://jp.linkedin.com/company/crysyslab",
           "locationSource": "https://jp.linkedin.com/company/crysyslab",
           "linkIsPrevious": true,
@@ -176,7 +176,8 @@
             "status": "estimated",
             "source": "https://pkc.iacr.org/2027/papersubmission.php",
             "basedOnYear": 2027
-          }
+          },
+          "locationStatus": "unofficial"
         }
       ],
       "category": "cryptography",

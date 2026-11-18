@@ -165,3 +165,26 @@ test('beer details match city and country and do not follow a previous venue', a
   assert.throws(() => validateBeerPrices([{...prices[0],eur: -1}]), /Invalid/);
   assert.throws(() => validateBeerPrices([{...prices[0],source:'javascript:alert(1)'}]), /HTTPS/);
 });
+
+test('unofficial evidence is shown separately for dates, deadlines, and locations', () => {
+  const today = '2026-11-18';
+  const seriesWithReport = structuredClone(series('pqcrypto'));
+  const edition = seriesWithReport.editions[0];
+  edition.status = 'unofficial';
+  edition.locationStatus = 'unofficial';
+  edition.locationSource = 'https://example.com/venue';
+  edition.submission.status = 'unofficial';
+  edition.submission.source = 'https://example.com/deadline';
+  validateData({ updated: today, conferences: [seriesWithReport] });
+  const provisional = renderRows([nextEdition(seriesWithReport, today)], today);
+  assert.match(provisional, /Unofficial submission deadline.*https:\/\/example.com\/deadline/);
+  assert.match(provisional, /Unofficial conference dates/);
+  assert.match(provisional, /Unofficial location.*https:\/\/example.com\/venue/);
+  assert.match(provisional, /deadline-indicator urgent unofficial/);
+
+  edition.locationStatus = 'confirmed';
+  const venueConfirmed = renderRows([nextEdition(seriesWithReport, today)], today);
+  assert.doesNotMatch(venueConfirmed, /Unofficial location/);
+  assert.match(venueConfirmed, /Unofficial conference dates/);
+  assert.match(venueConfirmed, /Unofficial submission deadline/);
+});
